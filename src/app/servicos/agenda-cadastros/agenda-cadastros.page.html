@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Agendamento</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [formGroup]="form">
+
+  <ion-item>
+    <ion-label position="stacked">Data:</ion-label>
+    <ion-input type="text" formControlName="data"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Hora:</ion-label>
+    <ion-input type="text" formControlName="hora"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Cliente:</ion-label>
+    <ion-select formControlName="cliente">
+      <ion-item *ngFor="let cli of clientes">
+        <ion-select-option value={{cli.id}}>{{cli.nome}}</ion-select-option>
+      </ion-item>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Corte:</ion-label>
+    <ion-select formControlName="cliente">
+      <ion-item *ngFor="let c of cortes">
+        <ion-select-option value={{c.id}}>{{c.nome}}</ion-select-option>
+      </ion-item>
+    </ion-select>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="salvar()">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

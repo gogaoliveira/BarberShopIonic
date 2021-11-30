@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Cadastro de Cortes</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [formGroup]="form">
+
+  <ion-item>
+    <ion-label position="stacked">nome:</ion-label>
+    <ion-input type="text" formControlName="nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Preço:</ion-label>
+    <ion-input type="number" formControlName="preco"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Foto:</ion-label>
+    <ion-input type="text" placeholder="https/..." formControlName="foto"></ion-input>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="salvar()">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
